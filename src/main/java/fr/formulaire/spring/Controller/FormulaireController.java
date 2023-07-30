@@ -26,7 +26,6 @@ public class FormulaireController {
         if(result.hasErrors()) {
             return"formulaire";
         }
-        model.addAttribute("formulairedto", formulairedto);
         return"resformulaire";
     }
 
