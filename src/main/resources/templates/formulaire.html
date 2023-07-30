@@ -9,8 +9,12 @@
     Hello world!
   </h1>
     <h1>Formulaire</h1>
-    <form th:action="@{/formulaire}" th:object="${formulairedto}" method="post"></form>
-    <p>nom : <input type="text" th:filed="*{nom}" /></p>
-
+    <form th:action="@{/formulaire}" th:object="${formulairedto}" method="post">
+    <p>nom : <input type="text" th:field="*{nom}" id="nom" /></p>
+    <p th:if="${#fields.hasErrors('nom')}" th:errors=*{nom} />
+    <p>prenom: <input type ="text" th:field="*{prenom}" id="prenom"/> </p>
+    <p th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}" />
+    <input type="submit" value="Ajouter">
+  </form>
 </body>
 </html>
